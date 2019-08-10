@@ -10,6 +10,7 @@ import ProviderController from './app/controllers/ProviderController';
 import AppointmentController from './app/controllers/AppointmentController';
 import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
+import AvailableController from './app/controllers/AvailableController';
 
 // middlewares
 import authMiddleware from './app/middlewares/auth';
@@ -37,5 +38,6 @@ router.get('/schedule', ScheduleController.index);
 router.post('/files', upload.single('file'), FileController.store);
 
 router.get('/providers', ProviderController.index);
+router.get('/providers/:providerId/available', AvailableController.index);
 
 module.exports = router;
